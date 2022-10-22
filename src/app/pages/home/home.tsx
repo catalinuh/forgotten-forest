@@ -3,9 +3,11 @@ import './home.scss';
 const Home = () => {
   return (
     <div className="home">
-      <header className="home-header">
-        <h5>Home</h5>
-      </header>
+      <p>
+        Forgotten Forest is a Puerto Rican specialty coffee brand in service of
+        the great Puerto Rican coffee tradition and the vitality of Puerto
+        Rico’s agrarian society.
+      </p>
     </div>
   );
 };
