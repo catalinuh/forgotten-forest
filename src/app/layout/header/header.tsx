@@ -20,8 +20,10 @@ const Header = () => {
           onClose={() => setIsOpen(false)}
           onOpen={() => setIsOpen(true)}
         >
-          <p>Our Mission</p>
-          <p>Get Involved</p>
+          <div className="header__menu--drawer">
+            <p>Our Mission</p>
+            <p>Get Involved</p>
+          </div>
         </SwipeableDrawer>
       </div>
     </div>

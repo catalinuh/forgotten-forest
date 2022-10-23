@@ -1,4 +1,7 @@
 .header {
+  background-color: #dacfb8;
+  padding-left: 15px;
+  padding-right: 15px;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
@@ -9,5 +12,15 @@
     flex-flow: row nowrap;
     justify-content: flex-end;
     align-items: center;
+
+    button {
+      color: #000000;
+    }
+
+    &--drawer {
+      p {
+        padding: 20px;
+      }
+    }
   }
 }

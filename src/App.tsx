@@ -1,5 +1,5 @@
 import { Footer, Header } from './app/layout';
-import { Home } from './app/pages';
+import { GetInvolved, Home } from './app/pages';
 
 import './App.scss';
 
@@ -10,6 +10,7 @@ const App = () => {
         <Header />
       </header>
       <Home />
+      <GetInvolved />
       <footer>
         <Footer />
       </footer>

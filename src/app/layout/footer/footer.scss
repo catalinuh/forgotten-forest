@@ -1,0 +1,26 @@
+.footer {
+  background-color: #a1b434;
+  position: relative;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+
+  &__above {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  &__below {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+
+    &--link {
+      padding: 5px;
+    }
+  }
+}
