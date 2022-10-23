@@ -1,26 +1,31 @@
 .header {
-  background-color: #dacfb8;
-  padding-left: 15px;
-  padding-right: 15px;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  align-items: center;
-
-  &__menu {
+    background-color: #dacfb8;
+    padding-left: 15px;
+    padding-right: 15px;
     display: flex;
-    flex-flow: row nowrap;
-    justify-content: flex-end;
+    flex-flow: row wrap;
+    justify-content: space-between;
     align-items: center;
 
-    button {
-      color: #000000;
-    }
+    &__menu {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-end;
+        align-items: center;
 
-    &--drawer {
-      p {
-        padding: 20px;
-      }
+        button {
+            color: #000000;
+        }
+
+        &--drawer {
+            p {
+                padding: 20px;
+            }
+        }
     }
-  }
+}
+
+.css-1ab2xsx {
+    width: 40% !important;
+    background-color: aqua;
 }

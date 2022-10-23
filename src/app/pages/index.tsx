@@ -1,5 +1,5 @@
-import GetInvolved from './get-involved/get-involved';
-import Home from './home/home';
-import Mission from './mission/mission';
+import GetInvolved from './get-involved/get-involved'
+import Home from './home/home'
+import Mission from './mission/mission'
 
-export { GetInvolved, Home, Mission };
+export { GetInvolved, Home, Mission }

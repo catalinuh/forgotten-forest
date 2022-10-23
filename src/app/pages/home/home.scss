@@ -1,19 +1,19 @@
 .home {
-  margin: 15px;
-  &__card {
-    display: flex;
-    flex-flow: row nowrap;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    &--text {
-      padding-left: 15px;
-      padding-right: 15px;
-      display: flex;
-      flex-flow: column wrap;
+    margin: 15px;
+    &__card {
+        display: flex;
+        flex-flow: row nowrap;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        &--text {
+            padding-left: 15px;
+            padding-right: 15px;
+            display: flex;
+            flex-flow: column wrap;
+        }
     }
-  }
 
-  h4 {
-    font-weight: 700;
-  }
+    h4 {
+        font-weight: 700;
+    }
 }
