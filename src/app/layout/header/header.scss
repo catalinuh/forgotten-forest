@@ -21,11 +21,17 @@
             p {
                 padding: 20px;
             }
+
+            a:link,
+            a:visited,
+            a:active {
+                text-decoration: none;
+                color: #000000;
+            }
+
+            a:hover {
+                color: maroon;
+            }
         }
     }
-}
-
-.css-1ab2xsx {
-    width: 40% !important;
-    background-color: aqua;
 }

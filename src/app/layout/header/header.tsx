@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { Button, SwipeableDrawer } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
 
@@ -21,8 +22,15 @@ const Header = () => {
                     onOpen={() => setIsOpen(true)}
                 >
                     <div className="header__menu--drawer">
-                        <p>Our Mission</p>
-                        <p>Get Involved</p>
+                        <Link to="/">
+                            <p>Home</p>
+                        </Link>
+                        <Link to="/mission">
+                            <p>Our Mission</p>
+                        </Link>
+                        <Link to="/get-involved">
+                            <p>Get Involved</p>
+                        </Link>
                     </div>
                 </SwipeableDrawer>
             </div>

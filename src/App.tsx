@@ -1,20 +1,27 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+
 import { Footer, Header } from './app/layout'
-import { GetInvolved, Home } from './app/pages'
+import { GetInvolved, Mission, Home } from './app/pages'
 
 import './App.scss'
 
 const App = () => {
     return (
-        <div className="App">
-            <header className="App-header">
-                <Header />
-            </header>
-            <Home />
-            <GetInvolved />
-            <footer>
-                <Footer />
-            </footer>
-        </div>
+        <Router>
+            <div className="App">
+                <header className="App-header">
+                    <Header />
+                </header>
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/get-involved" element={<GetInvolved />} />
+                    <Route path="/mission" element={<Mission />} />
+                </Routes>
+                <footer>
+                    <Footer />
+                </footer>
+            </div>
+        </Router>
     )
 }
 
