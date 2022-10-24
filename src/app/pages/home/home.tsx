@@ -1,6 +1,5 @@
-// @ts-ignore
-import WOW from 'wowjs'
 import { useEffect } from 'react'
+import AOS from 'aos'
 
 import image1 from '../../assets/image-1.jpeg'
 import image2 from '../../assets/image-2.jpeg'
@@ -9,12 +8,13 @@ import image4 from '../../assets/image-4.jpeg'
 import image5 from '../../assets/image-5.jpeg'
 
 import './home.scss'
+import 'aos/dist/aos.css'
 
 const Home = () => {
     useEffect(() => {
-        new WOW.WOW({
-            live: false,
-        }).init()
+        AOS.init({
+            startEvent: 'load',
+        })
     }, [])
 
     return (
@@ -24,7 +24,7 @@ const Home = () => {
                 service of the great Puerto Rican coffee tradition and the
                 vitality of Puerto Rico’s agrarian society.
             </p>
-            <div className="home__card wow slideInUp">
+            <div className="home__card">
                 <img
                     src={image1}
                     alt="Farmer with boots and bucket hat walking through tropical forest"
@@ -46,7 +46,7 @@ const Home = () => {
                 </div>
             </div>
 
-            <div className="home__card wow slideInUp">
+            <div className="home__card" data-aos="fade-up">
                 <div className="home__card--text">
                     <h4>A Magical Terroir</h4>
                     <p>
@@ -63,7 +63,7 @@ const Home = () => {
                 />
             </div>
 
-            <div className="home__card wow slideInUp">
+            <div className="home__card" data-aos="fade-up">
                 <img
                     src={image3}
                     alt="Farmer with boots and bucket hat walking through tropical forest"
@@ -78,7 +78,7 @@ const Home = () => {
                 </div>
             </div>
 
-            <div className="home__card wow slideInUp">
+            <div className="home__card" data-aos="fade-up">
                 <div className="home__card--text">
                     <h4>
                         Puerto Rican Farmers are the Heart of Forgotten Forest
@@ -97,7 +97,7 @@ const Home = () => {
                 />
             </div>
 
-            <div className="home__card wow slideInUp">
+            <div className="home__card" data-aos="fade-up">
                 <img
                     src={image5}
                     alt="Farmer with boots and bucket hat walking through tropical forest"
