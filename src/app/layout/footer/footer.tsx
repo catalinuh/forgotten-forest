@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import InstagramIcon from '@mui/icons-material/Instagram'
 
 import './footer.scss'
@@ -10,24 +11,32 @@ const Footer = () => {
                     <h2>Forgotten Forest</h2>
                 </div>
 
-                <div>
+                <Link to="/">
+                    <p>Home</p>
+                </Link>
+                <Link to="/mission">
                     <p>Our Mission</p>
-                </div>
-                <div>
+                </Link>
+                <Link to="/get-involved">
                     <p>Get Involved</p>
-                </div>
+                </Link>
                 <div>
-                    <InstagramIcon />
+                    <a href="https://www.instagram.com/forgottenforestpr">
+                        <InstagramIcon />
+                    </a>
                 </div>
             </div>
             <hr className="footer_divider" />
             <div className="footer__below">
-                <div className="footer__below--link">
+                <Link to="/" className="footer__below--link">
+                    <p>Home</p>
+                </Link>
+                <Link to="/mission" className="footer__below--link">
                     <p>Our Mission</p>
-                </div>
-                <div className="footer__below--link">
+                </Link>
+                <Link to="/get-involved" className="footer__below--link">
                     <p>Get Involved</p>
-                </div>
+                </Link>
             </div>
         </div>
     )
