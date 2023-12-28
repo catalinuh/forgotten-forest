@@ -1,5 +1,14 @@
 .home {
     margin: 15px;
+
+    h4 {
+        font-weight: 700;
+    }
+
+    img {
+        height: 100vh;
+    }
+
     &__card {
         display: flex;
         flex-flow: row nowrap;
@@ -11,9 +20,5 @@
             display: flex;
             flex-flow: column wrap;
         }
-    }
-
-    h4 {
-        font-weight: 700;
     }
 }
