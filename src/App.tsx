@@ -8,8 +8,8 @@ import './App.scss'
 const App = () => {
     return (
         <Router>
-            <div className="App">
-                <header className="App-header">
+            <div className="app">
+                <header className="app__header">
                     <Header />
                 </header>
                 <Routes>
