@@ -12,8 +12,6 @@ const Header = () => {
     const [currentPage, setCurrentPage] = useState<string>('')
 
     const isMobile = false
-    //
-    //
 
     useEffect(() => {
         if (location?.pathname) {
