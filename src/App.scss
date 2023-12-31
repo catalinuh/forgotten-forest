@@ -15,8 +15,11 @@ html {
 }
 
 body {
-    min-height: 100%;
-    position: relative;
+    height: 100%;
+}
+
+#root {
+    height: 100%;
 }
 
 a:link,
@@ -34,6 +37,11 @@ a:hover {
     width: 80vw;
     max-width: 1600px;
     margin: 0 auto;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
     &__header {
         margin-bottom: 150px;

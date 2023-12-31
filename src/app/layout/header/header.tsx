@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { Button, SwipeableDrawer } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 
 import './header.scss'
 
@@ -11,8 +12,19 @@ const Header = () => {
     const [isOpen, setIsOpen] = useState<boolean>(false)
     const [currentPage, setCurrentPage] = useState<string>('')
     const [hasScrolled, setHasScrolled] = useState(false)
+    const [screenWidth, setScreenWidth] = useState(window.innerWidth)
 
-    const isMobile = false
+    useEffect(() => {
+        const handleResize = () => {
+            setScreenWidth(window.innerWidth)
+        }
+
+        window.addEventListener('resize', handleResize)
+
+        return () => {
+            window.removeEventListener('resize', handleResize)
+        }
+    }, [])
 
     useEffect(() => {
         if (location?.pathname) {
@@ -30,9 +42,12 @@ const Header = () => {
                 <h1>Forgotten Forest</h1>
             </Link>
             <div className="header__menu">
-                {currentPage === '/' ? (
+                {currentPage === '/' || screenWidth < 1280 ? (
                     <>
-                        <Button onClick={() => setIsOpen(true)}>
+                        <Button
+                            onClick={() => setIsOpen(true)}
+                            className="header__menu--btn"
+                        >
                             Menu
                             <MenuIcon />
                         </Button>
@@ -47,13 +62,19 @@ const Header = () => {
                                 onClick={() => setIsOpen(false)}
                             >
                                 <Link to="/">
-                                    <p>Home</p>
+                                    <span>
+                                        <h3>Home</h3>
+                                    </span>
                                 </Link>
                                 <Link to="/mission">
-                                    <p>Our Mission</p>
+                                    <span>
+                                        <h3>Our Mission</h3>
+                                    </span>
                                 </Link>
                                 <Link to="/get-involved">
-                                    <p>Get Involved</p>
+                                    <span>
+                                        <h3>Get Involved</h3>
+                                    </span>
                                 </Link>
                             </div>
                         </SwipeableDrawer>
@@ -61,13 +82,19 @@ const Header = () => {
                 ) : (
                     <div className="header__menu--regular">
                         <Link to="/">
-                            <p>Home</p>
+                            <div className="header__menu--item">
+                                Home <KeyboardArrowDownIcon />
+                            </div>
                         </Link>
                         <Link to="/mission">
-                            <p>Our Mission</p>
+                            <div className="header__menu--item">
+                                Our Mission <KeyboardArrowDownIcon />
+                            </div>
                         </Link>
                         <Link to="/get-involved">
-                            <p>Get Involved</p>
+                            <div className="header__menu--item">
+                                Get Involved <KeyboardArrowDownIcon />
+                            </div>
                         </Link>
                     </div>
                 )}
