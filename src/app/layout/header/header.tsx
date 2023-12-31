@@ -4,6 +4,8 @@ import { Button, SwipeableDrawer } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 
+import logo from '../../assets/logo.png'
+
 import './header.scss'
 
 const Header = () => {
@@ -14,6 +16,7 @@ const Header = () => {
     const [hasScrolled, setHasScrolled] = useState(false)
     const [screenWidth, setScreenWidth] = useState(window.innerWidth)
 
+    // TODO: Add event listener for scroll and change hasScrolled to true
     useEffect(() => {
         const handleResize = () => {
             setScreenWidth(window.innerWidth)
@@ -39,7 +42,13 @@ const Header = () => {
             onScroll={() => setHasScrolled(true)}
         >
             <Link to="/">
-                <h1>Forgotten Forest</h1>
+                <div className="header__logo">
+                    <img src={logo} alt="coffee bean logo" />
+                    <h3>
+                        Forgotten <br />
+                        Forest
+                    </h3>
+                </div>
             </Link>
             <div className="header__menu">
                 {currentPage === '/' || screenWidth < 1280 ? (
