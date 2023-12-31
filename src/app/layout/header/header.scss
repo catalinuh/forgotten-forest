@@ -10,7 +10,7 @@
     margin: 0 auto;
 
     height: 150px;
-    width: 90vw;
+    width: 80vw;
 
     position: fixed;
     top: 0;
@@ -38,5 +38,11 @@
                 padding: 20px;
             }
         }
+    }
+}
+
+@media (max-width: 1280px) {
+    .header {
+        width: 100%;
     }
 }

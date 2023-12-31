@@ -9,7 +9,7 @@
     margin: 0 auto;
 
     height: 100px;
-    width: 90vw;
+    width: 80vw;
 
     position: absolute;
     bottom: 0;
@@ -42,5 +42,11 @@
         &--link {
             padding: 5px;
         }
+    }
+}
+
+@media (max-width: 1280px) {
+    .footer {
+        width: 100%;
     }
 }
