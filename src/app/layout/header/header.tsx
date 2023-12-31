@@ -5,12 +5,12 @@ import MenuIcon from '@mui/icons-material/Menu'
 
 import './header.scss'
 
-
 const Header = () => {
     let location = useLocation()
 
     const [isOpen, setIsOpen] = useState<boolean>(false)
     const [currentPage, setCurrentPage] = useState<string>('')
+    const [hasScrolled, setHasScrolled] = useState(false)
 
     const isMobile = false
 
@@ -21,7 +21,11 @@ const Header = () => {
     }, [location])
 
     return (
-        <div className="header">
+        <div
+            className={`header ${hasScrolled ? 'scrolled' : ''}`}
+            // TODO: Fix this
+            onScroll={() => setHasScrolled(true)}
+        >
             <Link to="/">
                 <h1>Forgotten Forest</h1>
             </Link>

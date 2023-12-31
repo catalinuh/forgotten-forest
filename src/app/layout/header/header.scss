@@ -1,22 +1,22 @@
 .header {
     background-color: #dacfb8;
-    padding-left: 15px;
-    padding-right: 15px;
+
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
     align-items: center;
 
-    a:link,
-    a:visited,
-    a:active {
-        text-decoration: none;
-        color: #000000;
-    }
+    padding: 0 15px 0 15px;
+    margin: 0 auto;
 
-    a:hover {
-        color: maroon;
-    }
+    height: 150px;
+    width: 90vw;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 5;
 
     &__menu {
         display: flex;
@@ -36,17 +36,6 @@
         &--drawer {
             p {
                 padding: 20px;
-            }
-
-            a:link,
-            a:visited,
-            a:active {
-                text-decoration: none;
-                color: #000000;
-            }
-
-            a:hover {
-                color: maroon;
             }
         }
     }
