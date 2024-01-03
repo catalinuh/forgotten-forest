@@ -13,8 +13,20 @@ const Header = () => {
 
     const [isOpen, setIsOpen] = useState<boolean>(false)
     const [currentPage, setCurrentPage] = useState<string>('')
-    const [hasScrolled, setHasScrolled] = useState(false)
     const [screenWidth, setScreenWidth] = useState(window.innerWidth)
+    const [scrollPosition, setScrollPosition] = useState(0)
+    const handleScroll = () => {
+        const position = window.scrollY
+        setScrollPosition(position)
+    }
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll, { passive: true })
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll)
+        }
+    }, [])
 
     // TODO: Add event listener for scroll and change hasScrolled to true
     useEffect(() => {
@@ -36,11 +48,7 @@ const Header = () => {
     }, [location])
 
     return (
-        <div
-            className={`header ${hasScrolled ? 'scrolled' : ''}`}
-            // TODO: Fix this
-            onScroll={() => setHasScrolled(true)}
-        >
+        <div className={`header ${scrollPosition > 80 ? 'scrolled' : ''}`}>
             <Link to="/">
                 <div className="header__logo">
                     <img src={logo} alt="coffee bean logo" />
@@ -57,8 +65,8 @@ const Header = () => {
                             onClick={() => setIsOpen(true)}
                             className="header__menu--btn"
                         >
-                            Menu
                             <MenuIcon />
+                            <span className="header__menu--btn-text">Menu</span>
                         </Button>
                         <SwipeableDrawer
                             anchor={'right'}
@@ -66,6 +74,12 @@ const Header = () => {
                             onClose={() => setIsOpen(false)}
                             onOpen={() => setIsOpen(true)}
                         >
+                            <span
+                                className="header__menu--drawer-x"
+                                onClick={() => setIsOpen(false)}
+                            >
+                                x
+                            </span>
                             <div
                                 className="header__menu--drawer"
                                 onClick={() => setIsOpen(false)}
